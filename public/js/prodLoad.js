@@ -32,7 +32,7 @@ function loadChat(data){
         let li = document.createElement('li')
         li.classList.add('list-group-item')
         i%2 == 0 ? li.classList.add('list-group-item-primary') : ''
-        li.innerHTML =  `<b>${ mess.email }:</b> ${ mess.text }`
+        li.innerHTML =  `<b>${ mess.email } [${ mess.time }]:</b> ${ mess.text }`
         messageBox.appendChild(li)
         i++
     })
