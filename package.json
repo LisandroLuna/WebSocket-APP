@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.mjs"
+    "start": "node index.mjs",
+    "serve": "nodemon index.mjs"
   },
   "author": "",
   "license": "ISC",
