@@ -6,7 +6,7 @@ class Archivo{
     }
     async leer(){
         try{
-            const contenido = await fs.promises.readFile('./data/' + this.nombre + '.txt', 'utf-8')
+            const contenido = await fs.promises.readFile('data/' + this.nombre + '.txt', 'utf-8')
             return JSON.parse(contenido)
         }catch(e){
             console.log(e)
@@ -22,7 +22,7 @@ class Archivo{
         }
         let newSave = await this.leer()
         newSave = [...newSave, newData]
-        const actualizacion = await fs.promises.writeFile('./data/' + this.nombre + '.txt', JSON.stringify(newSave), e => {
+        const actualizacion = await fs.promises.writeFile('data/' + this.nombre + '.txt', JSON.stringify(newSave), e => {
             if(!e){
                 return this.leer()
             }else{
@@ -31,7 +31,7 @@ class Archivo{
         })
     }
     async borrar(){
-        const borrado = await fs.unlink('./data/' + this.nombre + '.txt', e => {
+        const borrado = await fs.unlink('data/' + this.nombre + '.txt', e => {
             if(!e){
                 return 'Archivo borrado'
             }else{
