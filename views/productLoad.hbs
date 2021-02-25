@@ -1,0 +1,21 @@
+<script src="/js/prodLoad.js"></script>
+<div class="col-xl-6">
+    <h2 class="display-4 text-center">Ingreso de productos</h2>
+    <form id="form">
+        <div class="mb-3">
+            <label for="title" class="form-label">Titulo</label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="Ingresa un titulo...">
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Precio</label>
+            <input type="text" class="form-control" id="price" name="price" placeholder="Ingresa un precio...">
+        </div>
+        <div class="mb-3">
+            <label for="thumb" class="form-label">Imagen</label>
+            <input type="text" class="form-control" id="thumb" name="thumbnail" placeholder="Ingresa url de la imagen...">
+        </div>
+        <button type="submit" class="btn btn-success">Enviar</button>
+    </form>
+</div>
+{{> chatView }}
+{{> prodLoadView }}

@@ -1,0 +1,34 @@
+<div class="col-xl-6">
+    <h2 class="display-4 text-center">Centro de mensajes</h2>
+    <ul id="messages" class="list-group"></ul>
+    <form class="form p-2" id="form-chat">
+        <p class="lead">Enviar mensaje:</p>
+        <div class="input-group mb-3 col-md-6">
+             <input type="email" required="true" class="form-control" id="email" name="email" placeholder="pepe@ejemplo.com" >
+        </div>
+        <div class="input-group mb-3 col-md-6">
+            <input type="text" class="form-control" id="text" name="text" placeholder="Cuéntanos algo...">
+        </div>
+        <input type="submit" class="btn btn-primary" value="Enviar">
+    </form>
+</div>
+<script>
+let chatValues = {
+    email: '',
+    text: ''
+}
+const message = document.querySelectorAll('input');
+
+message.forEach(input => {
+    input.addEventListener('input', e => {
+        chatValues = {...chatValues, [e.target.name]: e.target.value};
+    })
+})
+let formChat = document.getElementById('form-chat')
+formChat.addEventListener('submit', data => {
+    const socket = io();
+    socket.on('messages', mess => {
+        socket.emit('addMessages', chatValues);
+    })
+})
+</script>

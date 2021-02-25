@@ -1,0 +1,5 @@
+[
+  { email: "juan@hotmail.com", text: "¡Hola! ¿Que tal?" },
+  { email: "pedro@gmail.com", text: "¡Muy bien! ¿Y vos?" },
+  { email: "ana@live.com", text: "¡Genial!" }
+]

@@ -1,0 +1,30 @@
+<div id="data" class="col-xl-12 pt-5">
+    <div class="alert alert-danger" role="alert">
+        No hay productos
+    </div>
+</div>
+
+<script>
+
+    let inputValues = {
+        title: '',
+        price: '',
+        thumbnail: ''
+    }
+    const inputs = document.querySelectorAll('input');
+
+    inputs.forEach(input => {
+        input.addEventListener('input', e => {
+            inputValues = {...inputValues, [e.target.name]: e.target.value};
+        })
+    })
+    let form = document.getElementById('form')
+    form.addEventListener('submit', e => {
+        const { title, price, thumbnail } = inputValues;
+        const socket = io();
+        socket.on('data', data => {
+            socket.emit('update', {title, price, thumbnail});
+        })
+        inputs.forEach(input => input.value = '');
+    })
+</script>
