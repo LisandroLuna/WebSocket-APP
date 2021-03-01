@@ -1,1 +1,0 @@
-[{"email":"juan@hotmail.com","text":"¡Hola! ¿Que tal?","time":"01/01/2020 10:22:01"},{"email":"pedro@gmail.com","text":"¡Muy bien! ¿Y vos?","time":"01/01/2020 10:22:01"},{"email":"ana@live.com","text":"¡Genial!","time":"01/01/2020 10:22:01"},{"email":"pedro@gmail.com","text":"alo","time":"2021-02-24 23:02:34","id":4}]
