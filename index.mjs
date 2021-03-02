@@ -52,8 +52,9 @@ io.on("connection", socket => {
         socket.broadcast.emit('data', prodList)
     })
     socket.on('addMessages', (newMess) => {
-        addMess(newMess).then(() => {
-            socket.broadcast.emit('messages', messages)
+        console.log(newMess)
+        addMess(newMess).then(mess => {
+            socket.broadcast.emit('messages', mess)
         })
     })
 });

@@ -26,6 +26,7 @@ class Archivo{
             if(!e){
                 return this.leer()
             }else{
+                console.log(e)
                 return 'Error: ' + e
             }
         })
